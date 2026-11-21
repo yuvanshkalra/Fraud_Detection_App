@@ -1,0 +1,164 @@
+[2026-11-18 10:52:50,530] INFO    detector.services.fraud: Loading fraud model from /home/varun/Desktop/Fraud App/fraud_detection_package/fraud_rf_model.joblib
+[2026-11-18 10:52:53,569] INFO    detector.services.fraud: Fraud model ready in 3.04s (cuML 26.10.00)
+/home/varun/Desktop/Fraud App/fraud_server/.venv/lib/python3.13/site-packages/treelite/core.py:25: UserWarning: [10:52:55] /__w/nvforest/nvforest/python/nvforest/build/cp311-abi3-linux_x86_64/_deps/treelite-src/src/serializer.cc:202: The model you are loading originated from a newer Treelite version; some functionalities may be unavailable.
+Currently running Treelite version 4.7.0
+The model checkpoint was generated from Treelite version 4.8.1
+  warnings.warn(py_str(msg))
+[2026-11-18 10:52:56,018] INFO    detector.services.fraud: cuML warm-up inference finished in 2.45s
+[2026-11-18 10:52:56,018] INFO    detector.services.stt: Loading Whisper model 'tiny' on cuda (download root /home/varun/Desktop/Fraud App/fraud_server/models/whisper)
+Service Unavailable: /healthz
+[2026-11-18 10:52:56,527] ERROR   django.request: Service Unavailable: /healthz
+[18/Nov/2026 10:52:56] "GET /healthz HTTP/1.1" 503 440
+[2026-11-18 10:52:57,582] INFO    detector.services.stt: Torch CPU threads set to 2 (visible cores: 12)
+[2026-11-18 10:52:58,255] INFO    detector.services.stt: Whisper ready on cuda in 2.24s
+Performing system checks...
+
+System check identified no issues (0 silenced).
+November 18, 2026 - 10:52:50
+Django version 5.2.19, using settings 'config.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+  0%|          | 0/100 [00:00<?, ?frames/s][18/Nov/2026 10:52:58] "GET /healthz HTTP/1.1" 200 434
+[18/Nov/2026 10:52:58] "GET /healthz HTTP/1.1" 200 434
+  0%|          | 0/100 [00:00<?, ?frames/s]
+[2026-11-18 10:52:59,173] INFO    detector.services.stt: Whisper warm-up inference finished in 0.92s
+  0%|          | 0/3000 [00:00<?, ?frames/s]  0%|          | 0/3000 [00:00<?, ?frames/s]
+[2026-11-18 10:52:59,384] INFO    detector.services.stt: Whisper transcribed fraudcall_7fsn19t7.mp4 in 0.18s (0 segments)
+[2026-11-18 10:52:59,396] INFO    detector.views: transcribe call_id=perf30 chunk=0 bytes=247403 chars=0 latency_ms=184.9
+[18/Nov/2026 10:52:59] "POST /v1/transcribe HTTP/1.1" 200 303
+[2026-11-18 10:52:59,420] INFO    detector.views: detect call_id=perf chunk=1 final=False score=0.6500 level=MEDIUM chars=77 latency_ms=4.6
+[18/Nov/2026 10:52:59] "POST /v1/detect HTTP/1.1" 200 488
+[18/Nov/2026 10:53:04] "GET /healthz HTTP/1.1" 200 435
+[2026-11-18 10:53:04,515] INFO    detector.views: detect call_id=smoke-nested-1 chunk=2 final=True score=0.6960 level=MEDIUM chars=101 latency_ms=4.0
+[18/Nov/2026 10:53:04] "POST /v1/detect HTTP/1.1" 200 489
+[2026-11-18 10:53:04,618] INFO    detector.views: detect call_id=smoke-flat-1 chunk=0 final=True score=0.2660 level=SAFE chars=62 latency_ms=4.1
+[18/Nov/2026 10:53:04] "POST /v1/detect HTTP/1.1" 200 150
+  0%|          | 0/300 [00:00<?, ?frames/s]In file included from /home/varun/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/include/python3.13/Python.h:14,
+                 from /tmp/tmpvl18_ip8/cuda_utils.c:6:
+/home/varun/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/include/python3.13/pyconfig.h:1988:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1988 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/varun/Desktop/Fraud App/fraud_server/.venv/lib/python3.13/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmpvl18_ip8/cuda_utils.c:1:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/varun/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/include/python3.13/Python.h:14,
+                 from /tmp/tmp39z7c9q_/__triton_launcher.c:7:
+/home/varun/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/include/python3.13/pyconfig.h:1988:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1988 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/varun/Desktop/Fraud App/fraud_server/.venv/lib/python3.13/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmp39z7c9q_/__triton_launcher.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+In file included from /home/varun/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/include/python3.13/Python.h:14,
+                 from /tmp/tmpwjwmpwcr/__triton_launcher.c:7:
+/home/varun/.local/share/uv/python/cpython-3.13.18-linux-x86_64-gnu/include/python3.13/pyconfig.h:1988:9: warning: ‘_POSIX_C_SOURCE’ redefined
+ 1988 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/bits/libc-header-start.h:33,
+                 from /usr/include/stdlib.h:26,
+                 from /home/varun/Desktop/Fraud App/fraud_server/.venv/lib/python3.13/site-packages/triton/backends/nvidia/include/cuda.h:56,
+                 from /tmp/tmpwjwmpwcr/__triton_launcher.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+ 99%|█████████▉| 298/300 [00:04<00:00, 59.70frames/s] 99%|█████████▉| 298/300 [00:05<00:00, 59.13frames/s]
+[2026-11-18 10:53:10,046] INFO    detector.services.stt: Whisper transcribed fraudcall_oau7lgn5.mp4 in 5.13s (1 segments)
+[2026-11-18 10:53:10,058] INFO    detector.views: transcribe call_id=smoke-transcribe chunk=0 bytes=25823 chars=889 latency_ms=5125.4
+[18/Nov/2026 10:53:10] "POST /v1/transcribe HTTP/1.1" 200 5062
+[18/Nov/2026 10:53:10] "GET /healthz HTTP/1.1" 200 435
+Not Found: /health
+[2026-11-18 10:53:17,530] WARNING django.request: Not Found: /health
+[18/Nov/2026 10:53:17] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 10:53:47,552] WARNING django.request: Not Found: /health
+[18/Nov/2026 10:53:47] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 10:54:17,564] WARNING django.request: Not Found: /health
+[18/Nov/2026 10:54:17] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 10:54:47,574] WARNING django.request: Not Found: /health
+[18/Nov/2026 10:54:47] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 10:55:17,586] WARNING django.request: Not Found: /health
+[18/Nov/2026 10:55:17] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 10:55:47,597] WARNING django.request: Not Found: /health
+[18/Nov/2026 10:55:47] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 10:56:17,608] WARNING django.request: Not Found: /health
+[18/Nov/2026 10:56:17] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 10:56:47,621] WARNING django.request: Not Found: /health
+[18/Nov/2026 10:56:47] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 10:57:17,633] WARNING django.request: Not Found: /health
+[18/Nov/2026 10:57:17] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 10:57:47,642] WARNING django.request: Not Found: /health
+[18/Nov/2026 10:57:47] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 10:58:17,654] WARNING django.request: Not Found: /health
+[18/Nov/2026 10:58:17] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 10:58:47,663] WARNING django.request: Not Found: /health
+[18/Nov/2026 10:58:47] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 10:59:17,675] WARNING django.request: Not Found: /health
+[18/Nov/2026 10:59:17] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 10:59:47,685] WARNING django.request: Not Found: /health
+[18/Nov/2026 10:59:47] "GET /health HTTP/1.1" 404 3168
+[18/Nov/2026 11:00:01] "GET /healthz HTTP/1.1" 200 436
+Not Found: /health
+[2026-11-18 11:00:17,696] WARNING django.request: Not Found: /health
+[18/Nov/2026 11:00:17] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 11:00:47,713] WARNING django.request: Not Found: /health
+[18/Nov/2026 11:00:47] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 11:01:17,727] WARNING django.request: Not Found: /health
+[18/Nov/2026 11:01:17] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 11:01:47,736] WARNING django.request: Not Found: /health
+[18/Nov/2026 11:01:47] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 11:02:17,747] WARNING django.request: Not Found: /health
+[18/Nov/2026 11:02:17] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 11:02:47,755] WARNING django.request: Not Found: /health
+[18/Nov/2026 11:02:47] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 11:03:17,767] WARNING django.request: Not Found: /health
+[18/Nov/2026 11:03:17] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 11:03:47,790] WARNING django.request: Not Found: /health
+[18/Nov/2026 11:03:47] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 11:04:17,801] WARNING django.request: Not Found: /health
+[18/Nov/2026 11:04:17] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 11:04:47,810] WARNING django.request: Not Found: /health
+[18/Nov/2026 11:04:47] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 11:05:17,820] WARNING django.request: Not Found: /health
+[18/Nov/2026 11:05:17] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 11:05:47,840] WARNING django.request: Not Found: /health
+[18/Nov/2026 11:05:47] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 11:06:17,852] WARNING django.request: Not Found: /health
+[18/Nov/2026 11:06:17] "GET /health HTTP/1.1" 404 3168
+Not Found: /health
+[2026-11-18 11:06:47,869] WARNING django.request: Not Found: /health
+[18/Nov/2026 11:06:47] "GET /health HTTP/1.1" 404 3168

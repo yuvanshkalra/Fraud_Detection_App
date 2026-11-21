@@ -1,0 +1,20 @@
+# Virtualenv + Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Local state
+db.sqlite3
+db.sqlite3-journal
+db.sqlite3-wal
+db.sqlite3-shm
+.env
+install.log
+
+# Model / audio caches
+models/
+staticfiles/
+media/
+*.wav
+*.mp4.tmp

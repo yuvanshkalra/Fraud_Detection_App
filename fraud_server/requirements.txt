@@ -1,0 +1,13 @@
+# Canonical dependency pins live at the repository root so the server and the
+# model package cannot drift apart:
+#
+#   ../requirements.txt
+#
+# Install from this directory with:
+#
+#   uv venv --python 3.13 .venv
+#   uv pip install --python .venv/bin/python -r ../requirements.txt \
+#       --index-strategy unsafe-best-match
+#
+# The NVIDIA index (needed for cuml-cu13) is declared inside that file.
+-r ../requirements.txt

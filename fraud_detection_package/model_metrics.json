@@ -1,0 +1,29 @@
+{
+  "framework": "cuml 26.10.00",
+  "dataset_rows": 6398,
+  "train_rows": 5118,
+  "test_rows": 1280,
+  "label_counts": {
+    "normal": 5415,
+    "fraud": 983
+  },
+  "gpu_fit_seconds": 1020.46,
+  "cv_accuracy_mean": 0.9803,
+  "cv_f1_mean": 0.9343,
+  "cv_f1_std": 0.0135,
+  "accuracy": 0.9805,
+  "precision": 0.9433,
+  "recall": 0.9289,
+  "f1": 0.9361,
+  "roc_auc": 0.9942,
+  "confusion_matrix": [
+    [
+      1072,
+      11
+    ],
+    [
+      14,
+      183
+    ]
+  ]
+}

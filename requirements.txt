@@ -1,0 +1,43 @@
+# Python environment for the whole project
+#
+# One venv serves both components that need Python:
+#   • fraud_server/              — Django API (fraud + STT endpoints)
+#   • fraud_detection_package/   — the trained cuML Random Forest artifact
+#
+# cuML is published on NVIDIA's index, not (fully) PyPI. Install with the index
+# flags below or `cuml-cu13` may resolve to a 1 KB placeholder (0.0.0a0):
+#
+#   uv venv --python 3.13 fraud_server/.venv
+#   uv pip install --python fraud_server/.venv/bin/python -r requirements.txt \
+#       --index-strategy unsafe-best-match
+#
+# (The --extra-index-url is declared below, so it does not need to be repeated.)
+#
+# System dependency, not installable via pip:
+#   ffmpeg        # Whisper decodes uploaded audio with it
+#
+# Python: 3.13 (tested on 3.13.18, Linux x86_64)
+
+--extra-index-url https://pypi.nvidia.com
+
+# ── Trained model: cuML Random Forest + TF-IDF ───────────────────────────────
+cuml-cu13==26.10.0
+cupy-cuda13x==14.2.0
+scikit-learn==1.9.1
+numpy==2.4.6
+scipy==1.18.1
+joblib==1.6.0
+
+# ── Web API ──────────────────────────────────────────────────────────────────
+Django==5.2.19
+djangorestframework==3.16.1
+python-dotenv==1.2.4
+gunicorn==23.0.0
+
+# ── Speech-to-text: Whisper "tiny" ───────────────────────────────────────────
+openai-whisper==20250625
+torch==2.9.1
+numba==0.64.0
+
+# tiktoken is pulled by openai-whisper; pinned for reproducible tokenizer output.
+tiktoken==0.14.0
